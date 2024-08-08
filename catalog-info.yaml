@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: losbu1nmr-python-gitops
+  description: This is GitOps manifest for losbu1nmr-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: losbu1nmr-python
+    janus-idp.io/tekton: losbu1nmr-python
+    backstage.io/kubernetes-id: losbu1nmr-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:losbu1nmr-python
